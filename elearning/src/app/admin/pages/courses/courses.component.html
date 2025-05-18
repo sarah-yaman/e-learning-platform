@@ -1,0 +1,73 @@
+<div class="form-container">
+  <mat-card class="form-card">
+    <mat-card-header>
+      <mat-card-title>
+        <mat-icon>library_books</mat-icon>
+        Add New Course
+      </mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()" class="course-form">
+        <mat-form-field appearance="outline">
+          <mat-label>Title</mat-label>
+          <input matInput formControlName="title" placeholder="Course title">
+          <mat-icon matSuffix>title</mat-icon>
+          <mat-error *ngIf="form.get('title')?.invalid">
+            {{getErrorMessage('title')}}
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Description</mat-label>
+          <textarea matInput formControlName="description" placeholder="Course description" rows="3"></textarea>
+          <mat-icon matSuffix>description</mat-icon>
+          <mat-error *ngIf="form.get('description')?.invalid">
+            {{getErrorMessage('description')}}
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Course Type</mat-label>
+          <mat-select formControlName="type">
+            <mat-option value="">Select type</mat-option>
+            <mat-option value="online">Online</mat-option>
+            <mat-option value="offline">Offline</mat-option>
+          </mat-select>
+          <mat-icon matSuffix>category</mat-icon>
+          <mat-error *ngIf="form.get('type')?.invalid">
+            {{getErrorMessage('type')}}
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Start Date</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="date" [min]="minDate">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-icon matSuffix>event</mat-icon>
+          <mat-error *ngIf="form.get('date')?.invalid">
+            {{getErrorMessage('date')}}
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Price</mat-label>
+          <input matInput formControlName="price" placeholder="Course price" type="number" step="0.01">
+          <span matPrefix>$&nbsp;</span>
+          <mat-icon matSuffix>attach_money</mat-icon>
+          <mat-error *ngIf="form.get('price')?.invalid">
+            {{getErrorMessage('price')}}
+          </mat-error>
+        </mat-form-field>
+
+        <div class="form-actions">
+          <button mat-raised-button color="primary" type="submit">
+            <mat-icon>save</mat-icon>
+            Submit
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

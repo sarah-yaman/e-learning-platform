@@ -1,0 +1,44 @@
+<mat-toolbar color="primary" class="mat-elevation-z8 fancy-toolbar">
+  <!-- Left Side - Logo -->
+  <div class="logo-container" routerLink="/">
+    <mat-icon class="logo-icon">school</mat-icon>
+    <span class="platform-title">ScholarSphere</span>
+  </div>
+
+  <!-- Center - Navigation Buttons -->
+  <div class="nav-buttons">
+    <button mat-button routerLink="/" class="nav-button" matRipple>
+      <mat-icon>home</mat-icon>
+      <span>Home</span>
+    </button>
+
+    <button mat-button routerLink="/courses" class="nav-button" matRipple>
+      <mat-icon>library_books</mat-icon>
+      <span>Courses</span>
+    </button>
+
+    <button mat-button routerLink="/about" class="nav-button" matRipple>
+      <mat-icon>info</mat-icon>
+      <span>About</span>
+    </button>
+
+  </div>
+
+  <!-- Right Side - Action Buttons -->
+  <div class="action-buttons">
+    <button mat-icon-button routerLink="/cart"
+            matBadge="{{ numOfItem }}"
+            matBadgeColor="accent"
+            class="cart-button"
+            matBadgePosition="above after">
+      <mat-icon>shopping_cart</mat-icon>
+    </button>
+
+    <button mat-raised-button color="accent"
+            routerLink="/login"
+            class="login-button">
+      <mat-icon>account_circle</mat-icon>
+      <span>Login</span>
+    </button>
+  </div>
+</mat-toolbar>

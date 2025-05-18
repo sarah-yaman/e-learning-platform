@@ -1,0 +1,112 @@
+.cart-container {
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.cart-card {
+  padding: 16px;
+  margin-top: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1), 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.cart-icon {
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.cart-table {
+  width: 100%;
+  margin: 16px 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+}
+
+.course-info {
+  display: flex;
+  align-items: center;
+}
+
+.course-icon {
+  margin-right: 12px;
+  color: #3f51b5; /* Indigo 500 */
+}
+
+.empty-cart {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.empty-icon {
+  font-size: 60px;
+  width: 60px;
+  height: 60px;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.empty-cart h2 {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.cart-footer {
+  margin-top: 20px;
+}
+
+.total-section {
+  display: flex;
+  justify-content: flex-end;
+  margin: 16px 0;
+  padding-top: 16px;
+  border-top: 1px solid #eee;
+}
+
+.total-label {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.total-amount {
+  font-size: 24px;
+  font-weight: bold;
+  color: #3f51b5; /* Indigo 500 */
+}
+
+.checkout-action {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+.checkout-action button {
+  padding: 8px 24px;
+}
+
+.checkout-action mat-icon {
+  margin-right: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .cart-card {
+    padding: 8px;
+  }
+
+  .total-section, .checkout-action {
+    justify-content: center;
+  }
+
+  .cart-table {
+    font-size: 14px;
+  }
+
+  .course-icon {
+    margin-right: 8px;
+  }
+}

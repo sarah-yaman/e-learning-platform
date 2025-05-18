@@ -1,0 +1,78 @@
+/* Ensure the html and body take up the full height */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+/* Container to center the form */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Full viewport height */
+  background-color: #f3f4f6; /* Light background color */
+  padding: 20px 0;
+}
+
+/* The form itself */
+.login-form {
+  width: 100%;
+  max-width: 400px; /* Max width of the form */
+  padding: 32px;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Light shadow for form */
+}
+
+.form-title {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #3f51b5;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 16px; /* Space between input fields */
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+button {
+  width: 100%;
+  margin-top: 16px;
+  height: 48px;
+  font-size: 16px;
+}
+
+.error-message {
+  background-color: #ffebee;
+  color: #d32f2f;
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.login-link a {
+  color: #3f51b5;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+/* Add some spacing between icon and text in button */
+button mat-icon {
+  margin-right: 8px;
+}

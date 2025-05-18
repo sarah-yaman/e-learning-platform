@@ -1,0 +1,93 @@
+/* Toolbar styling */
+.fancy-toolbar {
+  background: linear-gradient(135deg, #3f51b5 0%, #2196F3 100%);
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+/* Logo section */
+.logo-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  margin-right: 20px;
+}
+
+.logo-container:hover {
+  transform: scale(1.05);
+}
+
+.logo-icon {
+  margin-right: 10px;
+  font-size: 28px;
+}
+
+.platform-title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: 0.5px;
+}
+
+/* Navigation buttons */
+.nav-buttons {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.nav-button {
+  margin: 0 8px;
+  transition: all 0.3s ease;
+  border-radius: 20px;
+}
+
+.nav-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.nav-button mat-icon {
+  margin-right: 5px;
+}
+
+/* Right-aligned action buttons */
+.action-buttons {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  gap: 12px;
+}
+
+.cart-button {
+  transition: transform 0.2s ease;
+}
+
+.cart-button:hover {
+  transform: scale(1.1);
+}
+
+.login-button {
+  border-radius: 20px;
+  padding: 0 16px;
+  font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .nav-buttons {
+    display: none;
+  }
+
+  .platform-title {
+    font-size: 1.1rem;
+  }
+
+  .action-buttons {
+    gap: 8px;
+  }
+}

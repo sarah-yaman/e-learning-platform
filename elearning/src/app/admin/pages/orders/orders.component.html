@@ -1,0 +1,60 @@
+<mat-card class="orders-card">
+  <mat-card-header>
+    <mat-card-title>
+      <mat-icon>shopping_cart</mat-icon>
+      Customer Orders
+    </mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    @if (isLoading) {
+      <div class="loading-spinner">
+        <mat-spinner diameter="50"></mat-spinner>
+      </div>
+    } @else {
+      @if (orders.length > 0) {
+        <table mat-table [dataSource]="orders" class="mat-elevation-z8">
+          <!-- User Details Column -->
+          <ng-container matColumnDef="userDetails">
+            <th mat-header-cell *matHeaderCellDef>User Details</th>
+            <td mat-cell *matCellDef="let order">
+              <div class="user-details">
+                <p><strong>Name:</strong> {{order.name}}</p>
+                <p><strong>Email:</strong> {{order.email}}</p>
+                <p><strong>Phone:</strong> {{order.phone}}</p>
+              </div>
+            </td>
+          </ng-container>
+
+          <!-- Order Details Column -->
+          <ng-container matColumnDef="orderDetails">
+            <th mat-header-cell *matHeaderCellDef>Order Details</th>
+            <td mat-cell *matCellDef="let order">
+              <p><strong>Total Courses:</strong> {{getCourseCount(order.courses)}}</p>
+            </td>
+          </ng-container>
+
+          <!-- Actions Column -->
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef>Actions</th>
+            <td mat-cell *matCellDef="let order">
+              <button mat-raised-button color="primary"
+                      routerLink="/admin/order-details/{{order._id}}">
+                <mat-icon>visibility</mat-icon>
+                View Details
+              </button>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      } @else {
+        <div class="empty-orders">
+          <mat-icon>remove_shopping_cart</mat-icon>
+          <h2>No Orders Yet</h2>
+        </div>
+      }
+    }
+  </mat-card-content>
+</mat-card>

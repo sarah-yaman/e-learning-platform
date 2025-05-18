@@ -1,0 +1,56 @@
+.form-container {
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+}
+
+.form-card {
+  width: 100%;
+  max-width: 600px;
+}
+
+.course-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+button[mat-raised-button] {
+  padding: 8px 24px;
+}
+
+button[mat-raised-button] mat-icon {
+  margin-right: 8px;
+}
+
+/* Snackbar styles */
+.success-snackbar {
+  background-color: #4caf50;
+  color: white;
+}
+
+.error-snackbar {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .form-container {
+    padding: 16px;
+  }
+
+  .form-actions {
+    justify-content: center;
+  }
+
+  button[mat-raised-button] {
+    width: 100%;
+  }
+}

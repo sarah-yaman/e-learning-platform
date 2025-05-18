@@ -1,0 +1,66 @@
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1.5rem;
+  background-color: #f0f4ff;
+  text-align: center;
+  gap: 2rem;
+}
+
+.hero-content {
+  max-width: 500px;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #3f51b5;
+}
+
+.hero-content .highlight {
+  color: #e91e63;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin: 1rem 0 2rem;
+  color: #555;
+}
+
+.hero-buttons button {
+  margin: 0 0.5rem;
+}
+
+.hero-image img {
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  background-color: #fff;
+}
+
+.feature {
+  max-width: 250px;
+  text-align: center;
+}
+
+.feature mat-icon {
+  font-size: 40px;
+  color: #3f51b5;
+  margin-bottom: 0.5rem;
+}
+
+.feature h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}

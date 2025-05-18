@@ -1,0 +1,12 @@
+<!-- Section Title -->
+<div class="section-spacer"></div>
+<div class="section-title">
+  <span>OUR OFFERED COURSES</span>
+</div>
+
+<!-- Courses Grid -->
+<div class="courses-container">
+  @for (course of courses; track course) {
+    <app-card [course]="course"></app-card>
+  }
+</div>

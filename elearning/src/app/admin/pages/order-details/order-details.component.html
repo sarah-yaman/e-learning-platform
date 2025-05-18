@@ -1,0 +1,92 @@
+<div class="order-details-container">
+  @if (isLoading) {
+    <div class="loading-spinner">
+      <mat-spinner diameter="50"></mat-spinner>
+    </div>
+  } @else if (isError) {
+    <mat-card class="error-card">
+      <mat-card-content>
+        <div class="error-message">
+          <mat-icon color="warn">error_outline</mat-icon>
+          <h2>Failed to load order details</h2>
+          <button mat-raised-button color="primary" (click)="backToOrders()">
+            <mat-icon>arrow_back</mat-icon>
+            Back to Orders
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  } @else {
+    <mat-card class="order-card">
+      <mat-card-header>
+        <mat-card-title>
+          <mat-icon>receipt</mat-icon>
+          Order Details
+        </mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+        <div class="customer-info">
+          <h2><mat-icon>person</mat-icon> Customer Information</h2>
+          <mat-divider></mat-divider>
+
+          <div class="info-grid">
+            <div class="info-item">
+              <mat-icon>badge</mat-icon>
+              <div>
+                <h3>Name</h3>
+                <p>{{orderDetails.name}}</p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <mat-icon>email</mat-icon>
+              <div>
+                <h3>Email</h3>
+                <p>{{orderDetails.email}}</p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <mat-icon>phone</mat-icon>
+              <div>
+                <h3>Phone</h3>
+                <p>{{orderDetails.phone}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="courses-section">
+          <h2><mat-icon>school</mat-icon> Courses ({{orders.length}})</h2>
+          <mat-divider></mat-divider>
+
+          <div class="courses-grid">
+            @for (order of orders; track order) {
+              <mat-card class="course-card">
+                <mat-card-header>
+                  <mat-card-title>{{order.title}}</mat-card-title>
+                  <mat-card-subtitle>
+                    <mat-icon>{{order.type === 'online' ? 'wifi' : 'location_on'}}</mat-icon>
+                    {{order.type | titlecase}}
+                  </mat-card-subtitle>
+                </mat-card-header>
+
+                <mat-card-content>
+                  <p>{{order.description}}</p>
+                </mat-card-content>
+              </mat-card>
+            }
+          </div>
+        </div>
+      </mat-card-content>
+
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="backToOrders()">
+          <mat-icon>arrow_back</mat-icon>
+          Back to Orders
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  }
+</div>
